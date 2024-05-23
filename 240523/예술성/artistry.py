@@ -30,17 +30,8 @@ def BFS(start):
                     queue.append((n_r, n_c))
     return bag
 
-def square_rotate(x, y, l): # 정사각형 모양 시계 방향 회전
-
-    for i in range(x, x+l):
-        for j in range(y, y+l):
-            ox, oy = i - x, j - y # (0, 0)으로 변환
-
-            rx, ry = oy, l - ox - 1 # 시계 방향 회전 공식
-
-            arr[rx + x][ry + y] = pan[i][j] # 모든 좌표에 적용할 수 있도록 인자(x, y)를 더해줌.
 for i in range(4):
-    visited = [[False for _ in range(5)] for _ in range(5)] # 초기화하기
+    visited = [[False for _ in range(N)] for _ in range(N)] # 초기화하기
     init_table_board = []
     temp_arr = [ [0] * N for _ in range(N) ] # 배열 회전하기 위해 만든 빈 배열
     half = N // 2
